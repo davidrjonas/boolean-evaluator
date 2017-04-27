@@ -1,0 +1,6 @@
+composer.lock
+vendor/
+phpunit.xml
+.phpcomplete_extended/
+tags
+tags.*

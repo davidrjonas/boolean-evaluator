@@ -1,0 +1,24 @@
+{
+    "name": "davidrjonas/boolean-evaluator",
+    "description": "Build boolean expressions and apply them to stuff",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David Jonas",
+            "homepage": "https://github.com/davidrjonas"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DavidRJonas\\BooleanEvaluator\\": "src"
+        }
+    },
+    "require": {
+        "php": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.1"
+    },
+    "extra": { "branch-alias": { "dev-master": "1.0.x-dev" }}
+}
