@@ -3,9 +3,14 @@
 namespace DavidRJonas\BooleanEvaluator\Evaluator;
 
 use DavidRJonas\BooleanEvaluator\Expression;
+use InvalidArgumentException;
 
-class Stringify extends AbstractEvaluator
+class Arrayer extends AbstractEvaluator
 {
+    const KEY_AND = 'and';
+    const KEY_OR  = 'or';
+    const KEY_NOT = 'not';
+
     private $r;
 
     public function apply(Expression $expr, $in = [])
@@ -14,24 +19,24 @@ class Stringify extends AbstractEvaluator
 
         $expr->apply($this, $in);
 
-        return implode(' and ', (array) $this->r);
+        return $this->r;
     }
 
     public function bAnd(array $args, $in)
     {
-        $this->r[] = implode(" and ", $this->values($args, $in));
+        $this->r[][self::KEY_AND] = $this->values($args, $in);
         return true;
     }
 
     public function bOr(array $args, $in)
     {
-        $this->r[] = '(' . implode(" or ", $this->values($args, $in)) . ')';
+        $this->r[][self::KEY_OR] = $this->values($args, $in);
         return true;
     }
 
     public function bNot(array $args, $in)
     {
-        $this->r[] = 'not (' . $this->value($args[0], $in) . ')';
+        $this->r[][self::KEY_NOT] = $this->value($args[0], $in);
         return true;
     }
 }

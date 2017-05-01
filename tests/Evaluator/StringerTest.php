@@ -5,7 +5,7 @@ namespace DavidRJonas\BooleanEvaluator\Test;
 use DavidRJonas\BooleanEvaluator\Expression;
 use DavidRJonas\BooleanEvaluator\Evaluator;
 
-class StringifyTest extends \PHPUnit\Framework\TestCase
+class StringerTest extends \PHPUnit\Framework\TestCase
 {
     public function testApplyReturnsComplexString()
     {
@@ -16,7 +16,7 @@ class StringifyTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(
             'A and B and (C or D) and not (C and D)',
-            (new Evaluator\Stringify)->apply($expr)
+            (new Evaluator\Stringer)->apply($expr)
         );
     }
 }

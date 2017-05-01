@@ -33,7 +33,7 @@ $expr = (new B\Expression)
                 (new B\Expression)->bAnd('C', 'D')
             );
 
-print (new B\Evaluator\Stringify)->apply($expr);
+print (new B\Evaluator\Stringer)->apply($expr);
 // output: A and B and (C or D) and not (C and D)
 
 $evaluator = new B\Evaluator\SetContains;

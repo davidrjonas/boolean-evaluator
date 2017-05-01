@@ -5,7 +5,7 @@ namespace DavidRJonas\BooleanEvaluator\Test;
 use DavidRJonas\BooleanEvaluator\Expression;
 use DavidRJonas\BooleanEvaluator\Evaluator;
 
-class ArrayifyTest extends \PHPUnit\Framework\TestCase
+class ArrayerTest extends \PHPUnit\Framework\TestCase
 {
     public function testApplyReturnsStructuredArray()
     {
@@ -16,7 +16,7 @@ class ArrayifyTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(
             [['and' => ['A', 'B']], ['or' => ['C', 'D']], ['not' => [['and' => ['C', 'D']]]]],
-            (new Evaluator\Arrayify)->apply($expr)
+            (new Evaluator\Arrayer)->apply($expr)
         );
     }
 }
