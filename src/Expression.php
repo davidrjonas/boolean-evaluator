@@ -13,25 +13,25 @@ class Expression
         $this->parent = $parent;
     }
 
-    public function and_()
+    public function bAnd()
     {
-        $this->op = 'and_';
+        $this->op = 'bAnd';
         $this->args = func_get_args();
 
         return new self($this);
     }
 
-    public function or_()
+    public function bOr()
     {
-        $this->op = 'or_';
+        $this->op = 'bOr';
         $this->args = func_get_args();
 
         return new self($this);
     }
 
-    public function not_($v)
+    public function bNot($v)
     {
-        $this->op = 'not_';
+        $this->op = 'bNot';
         $this->args = [$v];
 
         return new self($this);

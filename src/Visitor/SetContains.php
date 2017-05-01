@@ -4,7 +4,7 @@ namespace DavidRJonas\BooleanEvaluator\Visitor;
 
 class SetContains extends AbstractVisitor
 {
-    public function and_(array $args, $in)
+    public function bAnd(array $args, $in)
     {
         foreach($this->values($args, $in) as $v) {
             if (! in_array($v, $in)) {
@@ -15,7 +15,7 @@ class SetContains extends AbstractVisitor
         return true;
     }
 
-    public function or_(array $args, $in)
+    public function bOr(array $args, $in)
     {
         foreach($this->values($args, $in) as $v) {
             if (in_array($v, $in)) {
@@ -26,7 +26,7 @@ class SetContains extends AbstractVisitor
         return false;
     }
 
-    public function not_(array $args, $in)
+    public function bNot(array $args, $in)
     {
         return ! $this->value($args[0], $in);
     }

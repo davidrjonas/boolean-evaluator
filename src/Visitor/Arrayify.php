@@ -22,19 +22,19 @@ class Arrayify extends AbstractVisitor
         return $this->r;
     }
 
-    public function and_(array $args, $in)
+    public function bAnd(array $args, $in)
     {
         $this->r[][self::KEY_AND] = $this->values($args, $in);
         return true;
     }
 
-    public function or_(array $args, $in)
+    public function bOr(array $args, $in)
     {
         $this->r[][self::KEY_OR] = $this->values($args, $in);
         return true;
     }
 
-    public function not_(array $args, $in)
+    public function bNot(array $args, $in)
     {
         $this->r[][self::KEY_NOT] = $this->value($args[0], $in);
         return true;

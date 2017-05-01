@@ -10,9 +10,9 @@ class ArrayifyTest extends \PHPUnit\Framework\TestCase
     public function testApplyReturnsStructuredArray()
     {
         $expr = (new Expression)
-            ->and_('A', 'B')
-            ->or_('C', 'D')
-            ->not_((new Expression)->and_('C', 'D'));
+            ->bAnd('A', 'B')
+            ->bOr('C', 'D')
+            ->bNot((new Expression)->bAnd('C', 'D'));
 
         $this->assertEquals(
             [['and' => ['A', 'B']], ['or' => ['C', 'D']], ['not' => [['and' => ['C', 'D']]]]],

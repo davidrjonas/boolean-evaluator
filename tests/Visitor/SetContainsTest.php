@@ -18,7 +18,7 @@ class SetContainsTest extends \PHPUnit\Framework\TestCase
 
     public function setProvider()
     {
-        $expr = (new BE)->and_('A', 'B')->or_('C', 'D')->not_((new BE)->and_('C', 'D'));
+        $expr = (new BE)->bAnd('A', 'B')->bOr('C', 'D')->bNot((new BE)->bAnd('C', 'D'));
 
         return [
             [true, new BE, []],

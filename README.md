@@ -27,10 +27,10 @@ require __DIR__ . '/vendor/autoload.php';
 use DavidRJonas\BooleanEvaluator as B;
 
 $expr = (new B\Expression)
-            ->and_('A', 'B')
-            ->or_('C', 'D')
-            ->not_(
-                (new B\Expression)->and_('C', 'D')
+            ->bAnd('A', 'B')
+            ->bOr('C', 'D')
+            ->bNot(
+                (new B\Expression)->bAnd('C', 'D')
             );
 
 print (new B\Visitor\Stringify)->apply($expr);

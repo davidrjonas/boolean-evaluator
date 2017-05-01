@@ -10,9 +10,9 @@ class StringifyTest extends \PHPUnit\Framework\TestCase
     public function testApplyReturnsComplexString()
     {
         $expr = (new Expression)
-            ->and_('A', 'B')
-            ->or_('C', 'D')
-            ->not_((new Expression)->and_('C', 'D'));
+            ->bAnd('A', 'B')
+            ->bOr('C', 'D')
+            ->bNot((new Expression)->bAnd('C', 'D'));
 
         $this->assertEquals(
             'A and B and (C or D) and not (C and D)',

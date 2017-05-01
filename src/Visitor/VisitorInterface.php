@@ -7,7 +7,7 @@ use DavidRJonas\BooleanEvaluator\Expression;
 interface VisitorInterface
 {
     public function apply(Expression $expr, $in = []);
-    public function and_(array $args, $in);
-    public function or_(array $args, $in);
-    public function not_(array $args, $in);
+    public function bAnd(array $args, $in);
+    public function bOr(array $args, $in);
+    public function bNot(array $args, $in);
 }

@@ -10,9 +10,9 @@ abstract class AbstractVisitor implements VisitorInterface
         return $expr->visit($this, $in);
     }
 
-    abstract public function and_(array $args, $in);
-    abstract public function or_(array $args, $in);
-    abstract public function not_(array $args, $in);
+    abstract public function bAnd(array $args, $in);
+    abstract public function bOr(array $args, $in);
+    abstract public function bNot(array $args, $in);
 
     protected function values(array $args, $in)
     {
