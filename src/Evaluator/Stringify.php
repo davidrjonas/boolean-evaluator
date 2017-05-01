@@ -1,10 +1,10 @@
 <?php
 
-namespace DavidRJonas\BooleanEvaluator\Visitor;
+namespace DavidRJonas\BooleanEvaluator\Evaluator;
 
 use DavidRJonas\BooleanEvaluator\Expression;
 
-class Stringify extends AbstractVisitor
+class Stringify extends AbstractEvaluator
 {
     private $r;
 
@@ -12,7 +12,7 @@ class Stringify extends AbstractVisitor
     {
         $this->r = [];
 
-        $expr->visit($this, $in);
+        $expr->apply($this, $in);
 
         return implode(' and ', (array) $this->r);
     }

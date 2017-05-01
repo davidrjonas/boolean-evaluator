@@ -1,11 +1,11 @@
 <?php
 
-namespace DavidRJonas\BooleanEvaluator\Visitor;
+namespace DavidRJonas\BooleanEvaluator\Evaluator;
 
 use DavidRJonas\BooleanEvaluator\Expression;
 use InvalidArgumentException;
 
-class Arrayify extends AbstractVisitor
+class Arrayify extends AbstractEvaluator
 {
     const KEY_AND = 'and';
     const KEY_OR  = 'or';
@@ -17,7 +17,7 @@ class Arrayify extends AbstractVisitor
     {
         $this->r = [];
 
-        $expr->visit($this, $in);
+        $expr->apply($this, $in);
 
         return $this->r;
     }

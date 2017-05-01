@@ -1,13 +1,13 @@
 <?php
 
-namespace DavidRJonas\BooleanEvaluator\Visitor;
+namespace DavidRJonas\BooleanEvaluator\Evaluator;
 
 use DavidRJonas\BooleanEvaluator\Expression;
 
-abstract class AbstractVisitor implements VisitorInterface
+abstract class AbstractEvaluator implements EvaluatorInterface
 {
     public function apply(Expression $expr, $in = []) {
-        return $expr->visit($this, $in);
+        return $expr->apply($this, $in);
     }
 
     abstract public function bAnd(array $args, $in);

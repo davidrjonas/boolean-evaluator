@@ -37,10 +37,10 @@ class Expression
         return new self($this);
     }
 
-    public function visit(Visitor\VisitorInterface $visitor, $in)
+    public function apply(Evaluator\EvaluatorInterface $evaluator, $in)
     {
-        $v = $this->parent ? $this->parent->visit($visitor, $in) : true;
-        return $this->op ? $v && call_user_func([$visitor, $this->op], $this->args, $in) : $v;
+        $v = $this->parent ? $this->parent->apply($evaluator, $in) : true;
+        return $this->op ? $v && call_user_func([$evaluator, $this->op], $this->args, $in) : $v;
     }
 }
 

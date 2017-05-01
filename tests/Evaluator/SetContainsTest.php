@@ -3,7 +3,7 @@
 namespace DavidRJonas\BooleanEvaluator\Test;
 
 use DavidRJonas\BooleanEvaluator\Expression as BE;
-use DavidRJonas\BooleanEvaluator\Visitor;
+use DavidRJonas\BooleanEvaluator\Evaluator;
 
 class SetContainsTest extends \PHPUnit\Framework\TestCase
 {
@@ -12,7 +12,7 @@ class SetContainsTest extends \PHPUnit\Framework\TestCase
      */
     public function testApply($expected, $expr, $set)
     {
-        $v = new Visitor\SetContains;
+        $v = new Evaluator\SetContains;
         $this->assertEquals($expected, $v->apply($expr, $set));
     }
 

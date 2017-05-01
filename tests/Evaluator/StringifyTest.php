@@ -3,7 +3,7 @@
 namespace DavidRJonas\BooleanEvaluator\Test;
 
 use DavidRJonas\BooleanEvaluator\Expression;
-use DavidRJonas\BooleanEvaluator\Visitor;
+use DavidRJonas\BooleanEvaluator\Evaluator;
 
 class StringifyTest extends \PHPUnit\Framework\TestCase
 {
@@ -16,7 +16,7 @@ class StringifyTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(
             'A and B and (C or D) and not (C and D)',
-            (new Visitor\Stringify)->apply($expr)
+            (new Evaluator\Stringify)->apply($expr)
         );
     }
 }

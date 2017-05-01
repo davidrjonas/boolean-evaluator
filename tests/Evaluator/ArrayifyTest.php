@@ -3,7 +3,7 @@
 namespace DavidRJonas\BooleanEvaluator\Test;
 
 use DavidRJonas\BooleanEvaluator\Expression;
-use DavidRJonas\BooleanEvaluator\Visitor;
+use DavidRJonas\BooleanEvaluator\Evaluator;
 
 class ArrayifyTest extends \PHPUnit\Framework\TestCase
 {
@@ -16,7 +16,7 @@ class ArrayifyTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(
             [['and' => ['A', 'B']], ['or' => ['C', 'D']], ['not' => [['and' => ['C', 'D']]]]],
-            (new Visitor\Arrayify)->apply($expr)
+            (new Evaluator\Arrayify)->apply($expr)
         );
     }
 }

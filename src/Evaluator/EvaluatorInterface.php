@@ -1,10 +1,10 @@
 <?php
 
-namespace DavidRJonas\BooleanEvaluator\Visitor;
+namespace DavidRJonas\BooleanEvaluator\Evaluator;
 
 use DavidRJonas\BooleanEvaluator\Expression;
 
-interface VisitorInterface
+interface EvaluatorInterface
 {
     public function apply(Expression $expr, $in = []);
     public function bAnd(array $args, $in);

@@ -33,15 +33,15 @@ $expr = (new B\Expression)
                 (new B\Expression)->bAnd('C', 'D')
             );
 
-print (new B\Visitor\Stringify)->apply($expr);
+print (new B\Evaluator\Stringify)->apply($expr);
 // output: A and B and (C or D) and not (C and D)
 
-$visitor = new B\Visitor\SetContains;
+$evaluator = new B\Evaluator\SetContains;
 
-var_dump($visitor->apply($expr, ['A', 'B', 'C']));      // true
-var_dump($visitor->apply($expr, ['A', 'B', 'D']));      // true
-var_dump($visitor->apply($expr, ['A', 'B']));           // false, a C or D is missing
-var_dump($visitor->apply($expr, ['A', 'B', 'C', 'D'])); // false, C or D but not both
+var_dump($evaluator->apply($expr, ['A', 'B', 'C']));      // true
+var_dump($evaluator->apply($expr, ['A', 'B', 'D']));      // true
+var_dump($evaluator->apply($expr, ['A', 'B']));           // false, a C or D is missing
+var_dump($evaluator->apply($expr, ['A', 'B', 'C', 'D'])); // false, C or D but not both
 ```
 
 ## License

@@ -1,8 +1,8 @@
 <?php
 
-namespace DavidRJonas\BooleanEvaluator\Visitor;
+namespace DavidRJonas\BooleanEvaluator\Evaluator;
 
-class SetContains extends AbstractVisitor
+class SetContains extends AbstractEvaluator
 {
     public function bAnd(array $args, $in)
     {
